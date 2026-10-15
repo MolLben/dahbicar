@@ -84,24 +84,9 @@ function initNavbar(isLight = false) {
     }
   }, { passive: true });
 
-  // Mobile toggle
-  const toggle = navbar.querySelector('.nav-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  if (toggle && mobileMenu) {
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove('open');
-      }
-    });
-  }
-
   // Set active link
   const currentPath = window.location.pathname;
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+  document.querySelectorAll('.nav-links a').forEach(link => {
     const linkPath = link.getAttribute('href');
     if (linkPath === currentPath || (linkPath !== '/' && currentPath.startsWith(linkPath))) {
       link.classList.add('active');
@@ -180,10 +165,6 @@ function getNavbarHTML(activePage = '') {
     `<li><a href="${l.href}"${activePage === l.href ? ' class="active"' : ''}>${l.label}</a></li>`
   ).join('');
 
-  const mobileLinks = links.map(l =>
-    `<a href="${l.href}">${l.label}</a>`
-  ).join('');
-
   return `
     <nav class="navbar" id="navbar">
       <div class="nav-container">
@@ -196,17 +177,11 @@ function getNavbarHTML(activePage = '') {
           <a href="tel:+212660707200" class="nav-phone">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.24 6.24l1.15-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             +212 660 707 200
-          </a>          <a href="/cars" class="btn btn-primary btn-sm">Réserver</a>
-          <button class="nav-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-          </button>
+          </a>
+          <a href="/cars" class="btn btn-primary btn-sm">Réserver</a>
         </div>
       </div>
     </nav>
-    <div class="mobile-menu" id="mobile-menu">
-      ${mobileLinks}
-      <a href="tel:+212660707200" style="color:var(--orange)">📞 +212 660 707 200</a>
-      <a href="/cars" class="btn btn-primary mt-2">Réserver maintenant</a>    </div>
   `;
 }
 

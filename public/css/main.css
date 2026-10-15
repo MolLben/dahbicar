@@ -245,47 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-phone:hover { color: var(--orange); }
 .navbar.light .nav-phone { color: var(--gray-700); }
 
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-.nav-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all var(--transition);
-}
-.navbar.light .nav-toggle span { background: var(--dark); }
 
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 80px; left: 0; right: 0;
-  background: rgba(15,23,42,0.98);
-  backdrop-filter: blur(20px);
-  padding: 1.5rem;
-  z-index: 999;
-  flex-direction: column;
-  gap: 0.5rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  transition: all var(--transition);
-}
-.mobile-menu a:hover { color: var(--white); background: rgba(255,255,255,0.1); }
 
 /* ─── Hero ──────────────────────────────────────────────── */
 .hero {
@@ -992,8 +952,8 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .steps-grid { grid-template-columns: repeat(2, 1fr); }
   .filter-grid { grid-template-columns: repeat(3, 1fr); }
-  .nav-links, .nav-actions .btn-primary { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 0.4rem 0.6rem; font-size: 0.8rem; }
 }
 
 @media (max-width: 768px) {
@@ -1343,26 +1303,6 @@ textarea.form-control { resize: vertical; }
 .navbar.light .nav-links a { color: var(--dark); }
 .navbar.light .nav-links a:hover, .navbar.light .nav-links a.active { color: var(--orange); }
 .navbar.light .nav-phone { color: var(--dark); }
-.navbar.light .nav-toggle span { background: var(--dark); }
-
-/* ─── Mobile menu ───────────────────────────────────────── */
-.mobile-menu {
-  position: fixed;
-  top: 0; right: -100%;
-  width: min(320px, 85vw);
-  height: 100vh;
-  background: var(--dark);
-  z-index: 200;
-  display: flex;
-  flex-direction: column;
-  padding: 6rem 2rem 2rem;
-  gap: .75rem;
-  transition: right .35s cubic-bezier(0.4,0,0.2,1);
-  box-shadow: -10px 0 40px rgba(0,0,0,0.4);
-}
-.mobile-menu.open { right: 0; }
-.mobile-menu a { font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.8); padding: .875rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.mobile-menu a:hover, .mobile-menu a.active { color: var(--orange); }
 
 /* ─── Hero Stat ─────────────────────────────────────────── */
 .hero-stat { font-size: .8rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: .3rem; }
