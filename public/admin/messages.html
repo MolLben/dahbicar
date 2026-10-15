@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Messages – Admin · DAHBI CAR</title>
+  <link rel="shortcut icon" href="/images/logo.png">
+  <link rel="stylesheet" href="/css/admin.css">
+  <style>
+    .message-row { cursor: pointer; }
+    .message-row.unread td { font-weight: 600; }
+    .message-row:hover { background: #fafbfc; }
+    .msg-dot { width: 8px; height: 8px; border-radius: 50%; background: #f97316; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<div class="admin-layout">
+  <div id="sidebar-container"></div>
+  <div class="admin-main">
+    <div id="topbar-container"></div>
+    <div class="admin-content">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+        <div>
+          <div class="page-title">Messages</div>
+          <div class="page-subtitle">Messages reçus via le formulaire de contact.</div>
+        </div>
+        <button class="btn btn-outline btn-sm" id="btn-mark-all">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Tout marquer lu
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="table-card" style="margin-bottom:1rem;padding:1rem 1.25rem">
+        <div class="toolbar">
+          <div class="search-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" class="search-input" id="msg-search" placeholder="Nom, email, sujet...">
+          </div>
+          <select class="form-control" id="msg-filter" style="width:auto;padding:.5rem .875rem">
+            <option value="">Tous les messages</option>
+            <option value="unread">Non lus</option>
+            <option value="read">Lus</option>
+          </select>
+          <span id="msg-count-label" style="font-size:.85rem;color:#94a3b8;margin-left:auto"></span>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-card">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:12px"></th>
+                <th>Expéditeur</th>
+                <th>Sujet</th>
+                <th>Téléphone</th>
+                <th>Date</th>
+                <th style="text-align:right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="msg-tbody">
+              <tr><td colspan="6"><div class="empty-state"><div class="spinner" style="margin:0 auto"></div></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Message Detail Modal -->
+<div class="modal-overlay" id="msg-modal" style="display:none">
+  <div class="modal" style="max-width:560px">
+    <div class="modal-header">
+      <span class="modal-title">Message de <span id="msg-modal-name"></span></span>
+      <button class="modal-close" onclick="document.getElementById('msg-modal').style.display='none'">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:grid;gap:.4rem;margin-bottom:1.25rem">
+        <div><span style="color:#64748b;font-size:.8rem">Email :</span> <a id="msg-m-email" href="#" style="color:#f97316;font-size:.875rem"></a></div>
+        <div><span style="color:#64748b;font-size:.8rem">Téléphone :</span> <a id="msg-m-phone" href="#" style="color:#f97316;font-size:.875rem"></a></div>
+        <div><span style="color:#64748b;font-size:.8rem">Sujet :</span> <span id="msg-m-subject" style="font-weight:600;font-size:.875rem"></span></div>
+        <div><span style="color:#64748b;font-size:.8rem">Date :</span> <span id="msg-m-date" style="font-size:.875rem"></span></div>
+      </div>
+      <div style="background:#f8fafc;border-radius:8px;padding:1rem;font-size:.9rem;line-height:1.8;white-space:pre-wrap" id="msg-m-body"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="document.getElementById('msg-modal').style.display='none'">Fermer</button>
+      <a id="msg-m-reply-email" href="#" class="btn btn-outline btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Répondre par email
+      </a>
+      <a id="msg-m-reply-wa" href="#" target="_blank" class="btn btn-success btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="btn btn-danger btn-sm" id="msg-m-delete">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/admin.js"></script>
+<script>
+  const { requireAuth, adminApi, toast, getSidebarHTML, getTopbarHTML, initAdminResponsive, formatDate } = AdminUtils;
+  if (!requireAuth()) throw new Error('unauth');
+
+  document.getElementById('sidebar-container').innerHTML = getSidebarHTML('/admin/messages');
+  document.getElementById('topbar-container').innerHTML = getTopbarHTML('Messages');
+  initAdminResponsive();
+
+  let allMessages = [];
+  let currentMsgId = null;
+
+  async function loadMessages() {
+    try {
+      const { messages } = await adminApi.get('/api/admin/messages');
+      allMessages = messages;
+      renderMessages();
+    } catch (err) { toast(err.message, 'error'); }
+  }
+
+  function renderMessages() {
+    const search = document.getElementById('msg-search').value.toLowerCase();
+    const filter = document.getElementById('msg-filter').value;
+
+    let filtered = allMessages.filter(m => {
+      if (search && !m.name.toLowerCase().includes(search) && !m.email.toLowerCase().includes(search) && !(m.subject||'').toLowerCase().includes(search)) return false;
+      if (filter === 'unread' && m.is_read) return false;
+      if (filter === 'read' && !m.is_read) return false;
+      return true;
+    });
+
+    document.getElementById('msg-count-label').textContent = `${filtered.length} message${filtered.length !== 1 ? 's' : ''}`;
+
+    const tbody = document.getElementById('msg-tbody');
+    if (!filtered.length) {
+      tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><p>Aucun message trouvé</p></div></td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(m => `
+      <tr class="message-row ${m.is_read ? '' : 'unread'}" onclick="viewMessage(${m.id})">
+        <td><div class="${m.is_read ? '' : 'msg-dot'}"></div></td>
+        <td>
+          <div style="font-size:.875rem">${m.name}</div>
+          <div style="font-size:.75rem;color:#94a3b8">${m.email}</div>
+        </td>
+        <td style="font-size:.875rem;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${m.subject || '(sans sujet)'}</td>
+        <td style="font-size:.8rem;color:#64748b">${m.phone || '—'}</td>
+        <td style="font-size:.8rem;color:#94a3b8">${formatDate(m.created_at)}</td>
+        <td style="text-align:right" onclick="event.stopPropagation()">
+          <div style="display:flex;gap:.4rem;justify-content:flex-end">
+            <a href="mailto:${m.email}?subject=RE: ${encodeURIComponent(m.subject||'Votre message')}" class="btn btn-outline btn-sm btn-icon" title="Répondre">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+            </a>
+            <button class="btn btn-danger btn-sm btn-icon" onclick="deleteMsg(${m.id})" title="Supprimer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  async function viewMessage(id) {
+    const m = allMessages.find(msg => msg.id === id);
+    if (!m) return;
+    currentMsgId = id;
+
+    document.getElementById('msg-modal-name').textContent = m.name;
+    document.getElementById('msg-m-email').textContent = m.email;
+    document.getElementById('msg-m-email').href = `mailto:${m.email}`;
+    document.getElementById('msg-m-phone').textContent = m.phone || '—';
+    document.getElementById('msg-m-phone').href = m.phone ? `tel:${m.phone}` : '#';
+    document.getElementById('msg-m-subject').textContent = m.subject || '(sans sujet)';
+    document.getElementById('msg-m-date').textContent = formatDate(m.created_at);
+    document.getElementById('msg-m-body').textContent = m.message;
+    document.getElementById('msg-m-reply-email').href = `mailto:${m.email}?subject=RE: ${encodeURIComponent(m.subject||'Votre message')}`;
+
+    const waPhone = (m.phone || '212660707200').replace(/\D/g,'');
+    document.getElementById('msg-m-reply-wa').href = `https://wa.me/${waPhone}?text=Bonjour%20${encodeURIComponent(m.name)}%2C%20suite%20%C3%A0%20votre%20message...`;
+
+    document.getElementById('msg-modal').style.display = 'flex';
+
+    // Mark as read
+    if (!m.is_read) {
+      try {
+        await adminApi.put(`/api/admin/messages/${id}/read`, {});
+        m.is_read = true;
+        renderMessages();
+      } catch {}
+    }
+  }
+
+  async function deleteMsg(id) {
+    if (!confirm('Supprimer ce message ?')) return;
+    try {
+      await adminApi.delete(`/api/admin/messages/${id}`);
+      toast('Message supprimé.');
+      allMessages = allMessages.filter(m => m.id !== id);
+      renderMessages();
+      document.getElementById('msg-modal').style.display = 'none';
+    } catch (err) { toast(err.message, 'error'); }
+  }
+
+  document.getElementById('msg-m-delete').addEventListener('click', () => deleteMsg(currentMsgId));
+
+  // Mark all read
+  document.getElementById('btn-mark-all').addEventListener('click', async () => {
+    try {
+      await adminApi.put('/api/admin/messages/mark-all-read', {});
+      allMessages.forEach(m => m.is_read = true);
+      renderMessages();
+      toast('Tous les messages marqués comme lus.');
+    } catch (err) { toast(err.message, 'error'); }
+  });
+
+  // Filters
+  ['msg-search','msg-filter'].forEach(id => {
+    document.getElementById(id).addEventListener('input', renderMessages);
+    document.getElementById(id).addEventListener('change', renderMessages);
+  });
+
+  loadMessages();
+</script>
+</body>
+</html>

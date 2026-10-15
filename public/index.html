@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DAHBI CAR – Location de Voiture à Casablanca</title>
+  <meta name="description" content="Louez votre voiture à Casablanca dès 190 DH/jour. Berlines, SUV, familiales & véhicules de luxe. Livraison gratuite, assurance incluse. Devis en 30 min.">
+  <meta name="author" content="DAHBI CAR">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dahbicar.ma">
+  <meta property="og:title" content="DAHBI CAR – Location de Voiture à Casablanca">
+  <meta property="og:description" content="Louez votre voiture à Casablanca dès 190 DH/jour.">
+  <meta property="og:image" content="/images/hero.jpg">
+  <link rel="shortcut icon" href="/images/dahbi-car-logo.png">
+  <link rel="icon" href="/images/dahbi-car-logo.png" type="image/png">
+  <link rel="preload" as="image" href="/images/hero.webp">
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRental","name":"DAHBI CAR","url":"https://dahbicar.ma","telephone":"+212660707200","address":{"@type":"PostalAddress","streetAddress":"Inara 02, 44 Rue 01","addressLocality":"Casablanca","addressCountry":"MA"}}</script>
+</head>
+<body>
+
+<!-- Navbar injected by JS -->
+<div id="navbar-container"></div>
+
+<main>
+  <!-- ─── Hero Section ─────────────────────────── -->
+  <section class="hero" id="home">
+    <div class="hero-bg" style="background-image: url('/images/hero.webp')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div style="max-width:560px">
+        <p class="hero-badge">Agence de Location de voitures · DAHBI CAR · 7j/7</p>
+        <h1 class="hero-title">
+          Location de Voiture à
+          <span class="text-orange">Casablanca</span>
+        </h1>
+        <p class="hero-description">
+          Louez votre voiture à Casablanca dès 190 DH/jour — livraison gratuite à Marrakech, Agadir, Rabat & Tanger. Flotte 2025+, assurance incluse. Réservez en 2 minutes.
+        </p>
+        <div class="hero-actions">
+          <a href="/cars" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="20" r="1"/><circle cx="20" cy="20" r="1"/></svg>
+            Voir nos voitures
+          </a>
+          <a href="#services" class="btn btn-secondary btn-lg">Nos services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="star">★</span> 4.9/5 sur Google
+          </div>
+          <span style="color:rgba(255,255,255,0.3)">·</span>
+          <div class="hero-stat">50+ avis vérifiés</div>
+          <span style="color:rgba(255,255,255,0.3)">·</span>
+          <div class="hero-stat">Depuis 2017</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Search Bar ───────────────────────────── -->
+  <section class="search-bar" id="search-section">
+    <div class="search-card">
+      <div class="search-inner" id="search-form-container" style="opacity:0;transform:translateY(30px);transition:all 0.6s ease 0.4s">
+        <h2 class="search-title">Trouvez votre voiture idéale</h2>
+        <form class="search-form" id="hero-search-form" action="/cars" method="get">
+          <div class="form-field">
+            <label for="pickup-location">Prise en charge</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <select id="pickup-location" name="pickup" class="input-field">
+                <option>Aéroport Mohammed V – Casablanca</option>
+                <option>Aéroport Marrakech-Ménara</option>
+                <option>Aéroport Tanger-Ibn Battouta</option>
+                <option>Aéroport Rabat-Salé</option>
+                <option selected>Casablanca</option>
+                <option>Marrakech</option>
+                <option>Tanger</option>
+                <option>Rabat</option>
+                <option>Agadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="drop-location">Restitution</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--blue)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <select id="drop-location" name="dropoff" class="input-field">
+                <option>Aéroport Mohammed V – Casablanca</option>
+                <option>Aéroport Marrakech-Ménara</option>
+                <option>Aéroport Tanger-Ibn Battouta</option>
+                <option>Aéroport Rabat-Salé</option>
+                <option selected>Casablanca</option>
+                <option>Marrakech</option>
+                <option>Tanger</option>
+                <option>Rabat</option>
+                <option>Agadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="start-date">Date départ</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <input type="date" id="start-date" name="from" class="input-field">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="end-date">Date retour</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <input type="date" id="end-date" name="to" class="input-field">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="car-category">Catégorie</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+              <select id="car-category" name="category" class="input-field">
+                <option value="">Toutes</option>
+                <option>SUV</option>
+                <option>Berline</option>
+                <option>Sport</option>
+                <option>Luxe</option>
+                <option>Familiale</option>
+                <option>Utilitaire</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>&nbsp;</label>
+            <button type="submit" class="btn btn-primary w-full">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              Rechercher
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Featured Cars ────────────────────────── -->
+  <section class="section" style="background:#fff" id="featured-cars">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Bestsellers</span>
+        <h2 class="section-title">Les voitures les plus réservées à Casablanca</h2>
+        <p class="section-subtitle">SUV, berlines, familiales — 35 véhicules récents, révisés avant chaque location et prêts à prendre la route.</p>
+      </div>
+      <div class="grid-3" id="featured-cars-grid">
+        <div class="cars-loading"><div class="loading-spinner"></div></div>
+      </div>
+      <div class="text-center mt-4" style="margin-top:2.5rem">
+        <a href="/cars" class="btn btn-outline btn-lg">Voir toutes nos voitures →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Why Us / Services ────────────────────── -->
+  <section class="section section-gray" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Avantages</span>
+        <h2 class="section-title">Pourquoi choisir DAHBI CAR ?</h2>
+        <p class="section-subtitle">Une expérience de location pensée pour votre confort et votre tranquillité d'esprit.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card animate-fade-up">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-title">Assurance Incluse</h3>
+          <p class="feature-desc">Assurance tous risques incluse dans tous nos tarifs. Roulez en toute sérénité sur toutes les routes du Maroc.</p>
+        </div>
+        <div class="feature-card animate-fade-up delay-100">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="feature-title">Livraison Gratuite</h3>
+          <p class="feature-desc">Livraison et reprise à domicile, à l'hôtel ou à l'aéroport. À Casablanca, Marrakech, Agadir, Rabat & Tanger.</p>
+        </div>
+        <div class="feature-card animate-fade-up delay-200">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 class="feature-title">Flotte 2025+</h3>
+          <p class="feature-desc">Des véhicules récents, révisés et nettoyés avant chaque location. Profitez du dernier confort technologique.</p>
+        </div>
+        <div class="feature-card animate-fade-up delay-300">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-title">Disponible 7j/7</h3>
+          <p class="feature-desc">Notre équipe est disponible tous les jours de 8h à 20h pour vous accompagner dans votre réservation.</p>
+        </div>
+        <div class="feature-card animate-fade-up delay-100">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12"/><path d="M1 1l22 22"/><path d="M1.61 3.41a2 2 0 0 0-.37.83c-.5 1.85.3 3.77 1.88 5.33"/></svg>
+          </div>
+          <h3 class="feature-title">Assistance 24h/24</h3>
+          <p class="feature-desc">En cas de panne ou d'urgence, notre hotline est disponible 24h/24. Un véhicule de remplacement vous est fourni rapidement.</p>
+        </div>
+        <div class="feature-card animate-fade-up delay-200">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="feature-title">Tarifs Transparents</h3>
+          <p class="feature-desc">Aucun frais caché. Le prix affiché inclut l'assurance. Des tarifs dégressifs avantageux pour les longues durées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ─────────────────────────── -->
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Simple & Rapide</span>
+        <h2 class="section-title">Réservez en 4 étapes</h2>
+        <p class="section-subtitle">Un processus simplifié pour que vous puissiez réserver votre voiture en moins de 2 minutes.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card animate-fade-up">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Choisissez votre voiture</h3>
+          <p class="step-desc">Parcourez notre flotte de plus de 35 véhicules et filtrez selon vos besoins.</p>
+        </div>
+        <div class="step-card animate-fade-up delay-100">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Indiquez vos dates</h3>
+          <p class="step-desc">Sélectionnez vos dates de départ et retour ainsi que votre lieu de prise en charge.</p>
+        </div>
+        <div class="step-card animate-fade-up delay-200">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Confirmez par WhatsApp</h3>
+          <p class="step-desc">Contactez-nous directement par WhatsApp pour confirmer la disponibilité et obtenir un devis.</p>
+        </div>
+        <div class="step-card animate-fade-up delay-300">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Profitez de la route !</h3>
+          <p class="step-desc">Nous livrons la voiture à l'adresse de votre choix. Prêt à partir !</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Stats ────────────────────────────────── -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="grid-4">
+        <div class="stat-card animate-fade-up">
+          <div class="stat-number">35+</div>
+          <div class="stat-label">Véhicules disponibles</div>
+        </div>
+        <div class="stat-card animate-fade-up delay-100">
+          <div class="stat-number">2017</div>
+          <div class="stat-label">Année de création</div>
+        </div>
+        <div class="stat-card animate-fade-up delay-200">
+          <div class="stat-number">4.9★</div>
+          <div class="stat-label">Note Google</div>
+        </div>
+        <div class="stat-card animate-fade-up delay-300">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Villes desservies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ─────────────────────────── -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Avis clients</span>
+        <h2 class="section-title">Ce que disent nos clients</h2>
+        <p class="section-subtitle">Plus de 50 avis vérifiés sur Google. La satisfaction de nos clients est notre priorité absolue.</p>
+      </div>
+      <div class="grid-3">
+        <div class="testimonial-card animate-fade-up">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Service impeccable ! La voiture était propre, en parfait état et livrée à l'heure à l'aéroport. Je recommande vivement DAHBI CAR pour tout séjour à Casablanca."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">K</div>
+            <div>
+              <div class="testimonial-name">Khalid B.</div>
+              <div class="testimonial-role">Client fidèle depuis 2021</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-fade-up delay-100">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Prix imbattables et équipe très professionnelle. J'ai loué un Hyundai Tucson pour 5 jours, tout s'est passé parfaitement. Assurance incluse, aucune mauvaise surprise !"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <div class="testimonial-name">Sara M.</div>
+              <div class="testimonial-role">Voyageuse d'affaires</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-fade-up delay-200">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Réservation rapide via WhatsApp, livraison à l'hôtel le lendemain matin. Le Dacia Jogger 7 places était parfait pour toute la famille. Merci DAHBI CAR !"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">Y</div>
+            <div>
+              <div class="testimonial-name">Youssef A.</div>
+              <div class="testimonial-role">Touriste français</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────── -->
+  <section class="section" style="background:#fff" id="faq">
+    <div class="container" style="max-width:800px">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Questions fréquentes</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Quels documents faut-il pour louer une voiture à Casablanca ?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Vous aurez besoin d'un permis de conduire valide (marocain ou international), d'une pièce d'identité nationale ou d'un passeport, et d'une carte de crédit pour la caution. L'âge minimum est de 21 ans avec 1 an de permis.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Est-ce que l'assurance est incluse dans le prix ?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Oui, une assurance responsabilité civile et tous risques de base est incluse dans tous nos tarifs. Nous proposons également une couverture complète avec franchise réduite en option.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Puis-je faire livrer la voiture à l'aéroport Mohammed V ?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Absolument ! Nous livrons gratuitement à l'aéroport Mohammed V, à votre hôtel ou à l'adresse de votre choix. Précisez simplement votre adresse lors de la réservation.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Quelle est la durée minimale de location ?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">La durée minimale de location est de 24 heures (1 jour). Pour les locations longue durée (1 mois et plus), nous proposons des tarifs dégressifs très avantageux.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Comment fonctionne la caution ?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Une caution est prélevée par empreinte de carte bancaire au départ. Elle est restituée intégralement dans les 48h après la restitution du véhicule en bon état.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Puis-je voyager en dehors de Casablanca ?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Oui, vous pouvez circuler librement dans tout le Maroc. Nous livrons également nos véhicules à Marrakech, Agadir, Rabat et Tanger. Des restrictions s'appliquent pour certains véhicules de luxe — contactez-nous pour les détails.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ───────────────────────────────────── -->
+  <section class="section" style="background:linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%); padding:4rem 0">
+    <div class="container text-center">
+      <span class="section-label" style="color:var(--orange)">Prêt à partir ?</span>
+      <h2 class="section-title" style="color:#fff;margin-bottom:1rem">Réservez votre voiture maintenant</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.65);margin:0 auto 2rem">Contactez-nous par WhatsApp pour une réponse en moins de 30 minutes, 7j/7.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://wa.me/212660707200?text=Bonjour%2C%20je%20souhaite%20louer%20une%20voiture." target="_blank" class="btn btn-whatsapp btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp – Devis immédiat
+        </a>
+        <a href="/cars" class="btn btn-primary btn-lg">Parcourir la flotte</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-container"></div>
+
+<script src="/js/app.js"></script>
+<script>
+  // Inject navbar & footer
+  document.getElementById('navbar-container').innerHTML = LTC.getNavbarHTML('/');
+  document.getElementById('footer-container').innerHTML = LTC.getFooterHTML();
+
+  // Init
+  LTC.initNavbar();
+  LTC.initFAQ();
+
+  // Set default dates
+  const today = LTC.getTodayString();
+  const tomorrow = LTC.getTomorrowString();
+  const startDateEl = document.getElementById('start-date');
+  const endDateEl = document.getElementById('end-date');
+  if (startDateEl) { startDateEl.min = today; startDateEl.value = today; }
+  if (endDateEl) { endDateEl.min = today; endDateEl.value = tomorrow; }
+
+  // Animate search bar
+  setTimeout(() => {
+    const el = document.getElementById('search-form-container');
+    if (el) { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
+  }, 500);
+
+  // Load featured cars
+  async function loadFeaturedCars() {
+    try {
+      const { cars } = await LTC.api.get('/api/cars/featured');
+      const grid = document.getElementById('featured-cars-grid');
+      if (!cars.length) {
+        grid.innerHTML = '<div class="empty-state"><p>Aucune voiture disponible pour le moment.</p></div>';
+        return;
+      }
+      grid.innerHTML = cars.map(car => LTC.renderCarCard(car)).join('');
+      LTC.initAnimations();
+    } catch (err) {
+      console.error('Failed to load cars:', err);
+    }
+  }
+
+  loadFeaturedCars();
+
+  // Init animations for static elements
+  LTC.initAnimations();
+</script>
+</body>
+</html>

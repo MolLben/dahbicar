@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nos Voitures – DAHBI CAR</title>
+  <meta name="description" content="Découvrez toute la flotte DAHBI CAR : SUV, berlines, familiales et véhicules de luxe à partir de 190 MAD/jour à Casablanca.">
+  <link rel="shortcut icon" href="/images/dahbi-car-logo.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .cars-page-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; }
+    .sidebar { position: sticky; top: 100px; }
+    .sidebar-card { background:#fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); border:1px solid var(--gray-100); padding:1.5rem; margin-bottom:1rem; }
+    .sidebar-title { font-size:.875rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--gray-500); margin-bottom:1rem; }
+    .price-range { display:flex; align-items:center; gap:.5rem; font-size:.85rem; color:var(--gray-600); margin-top:.5rem; }
+    input[type="range"] { width:100%; accent-color: var(--orange); }
+    .cars-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem; }
+    .cars-count { font-size:.875rem; color:var(--gray-500); }
+    .cars-sort { display:flex; align-items:center; gap:.5rem; font-size:.875rem; color:var(--gray-600); }
+    .cars-sort select { border:1.5px solid var(--gray-200); border-radius:8px; padding:.4rem .8rem; font-size:.875rem; outline:none; cursor:pointer; }
+    .cars-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem; }
+    .sidebar-checkbox { display:flex; align-items:center; gap:.6rem; cursor:pointer; margin-bottom:.5rem; }
+    .sidebar-checkbox input { accent-color: var(--orange); width:16px; height:16px; cursor:pointer; }
+    .sidebar-checkbox span { font-size:.875rem; color:var(--gray-700); }
+    @media (max-width:1200px) { .cars-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width:1024px) { .cars-page-layout { grid-template-columns: 1fr; } .sidebar { position:static; } .cars-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width:640px) { .cars-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div id="navbar-container"></div>
+
+<!-- Page Header -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Accueil</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Nos Voitures</span>
+    </div>
+    <h1 class="page-hero-title">Notre Flotte de Véhicules</h1>
+    <p class="page-hero-subtitle">35+ véhicules récents · Assurance incluse · Livraison gratuite</p>
+  </div>
+</section>
+
+<main class="section" style="padding-top:2rem">
+  <div class="container">
+    <!-- Filter Tabs -->
+    <div class="filter-tabs" id="category-tabs">
+      <button class="filter-tab active" data-category="">Toutes</button>
+      <button class="filter-tab" data-category="Berline">Berlines</button>
+      <button class="filter-tab" data-category="SUV">SUV</button>
+      <button class="filter-tab" data-category="Familiale">Familiales</button>
+      <button class="filter-tab" data-category="Luxe">Luxe</button>
+      <button class="filter-tab" data-category="Utilitaire">Utilitaires</button>
+      <button class="filter-tab" data-category="Sport">Sport</button>
+    </div>
+
+    <div class="cars-page-layout">
+      <!-- Sidebar Filters -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Recherche</div>
+          <div class="input-wrapper">
+            <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" id="search-input" class="input-field" placeholder="Rechercher..." style="padding-left:2.25rem">
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">Budget / jour (MAD)</div>
+          <input type="range" id="price-range" min="0" max="2000" value="2000" step="50">
+          <div class="price-range">
+            <span>0 MAD</span>
+            <span style="flex:1;text-align:center;color:var(--orange);font-weight:700" id="price-display">≤ 2000 MAD</span>
+            <span>2000+</span>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">Carburant</div>
+          <label class="sidebar-checkbox"><input type="checkbox" value="Diesel" class="fuel-filter" checked><span>Diesel</span></label>
+          <label class="sidebar-checkbox"><input type="checkbox" value="Essence" class="fuel-filter" checked><span>Essence</span></label>
+          <label class="sidebar-checkbox"><input type="checkbox" value="Hybride" class="fuel-filter" checked><span>Hybride</span></label>
+          <label class="sidebar-checkbox"><input type="checkbox" value="Électrique" class="fuel-filter" checked><span>Électrique</span></label>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">Transmission</div>
+          <label class="sidebar-checkbox"><input type="checkbox" value="Manuelle" class="trans-filter" checked><span>Manuelle</span></label>
+          <label class="sidebar-checkbox"><input type="checkbox" value="Automatique" class="trans-filter" checked><span>Automatique</span></label>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">Places</div>
+          <label class="sidebar-checkbox"><input type="radio" name="seats" value="" checked><span>Toutes</span></label>
+          <label class="sidebar-checkbox"><input type="radio" name="seats" value="2"><span>2 places</span></label>
+          <label class="sidebar-checkbox"><input type="radio" name="seats" value="5"><span>5 places</span></label>
+          <label class="sidebar-checkbox"><input type="radio" name="seats" value="7"><span>7+ places</span></label>
+        </div>
+        <button class="btn btn-primary w-full" id="reset-filters">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          Réinitialiser
+        </button>
+      </aside>
+
+      <!-- Cars Grid -->
+      <div>
+        <div class="cars-header">
+          <span class="cars-count" id="cars-count">Chargement...</span>
+          <div class="cars-sort">
+            <span>Trier par</span>
+            <select id="sort-select">
+              <option value="featured">Populaires</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="name">Nom A-Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="cars-grid" id="cars-grid">
+          <div class="cars-loading" style="grid-column:1/-1"><div class="loading-spinner"></div></div>
+        </div>
+        <div id="no-results" class="empty-state d-none">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <h3>Aucun véhicule trouvé</h3>
+          <p>Essayez d'ajuster vos filtres.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="footer-container"></div>
+
+<script src="/js/app.js"></script>
+<script>
+  document.getElementById('navbar-container').innerHTML = LTC.getNavbarHTML('/cars');
+  document.getElementById('footer-container').innerHTML = LTC.getFooterHTML();
+  LTC.initNavbar(true);
+
+  let allCars = [];
+  let activeCategory = '';
+
+  // Parse URL params
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlCategory = urlParams.get('category') || '';
+  if (urlCategory) {
+    activeCategory = urlCategory;
+    document.querySelectorAll('.filter-tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.category === urlCategory);
+    });
+  }
+
+  async function loadCars() {
+    try {
+      const { cars } = await LTC.api.get('/api/cars');
+      allCars = cars;
+      renderCars();
+    } catch (err) {
+      document.getElementById('cars-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;color:red;padding:2rem">Erreur de chargement.</div>';
+    }
+  }
+
+  function getFilteredCars() {
+    const maxPrice = Number(document.getElementById('price-range').value);
+    const search = document.getElementById('search-input').value.toLowerCase().trim();
+    const fuels = [...document.querySelectorAll('.fuel-filter:checked')].map(c => c.value);
+    const trans = [...document.querySelectorAll('.trans-filter:checked')].map(c => c.value);
+    const seats = document.querySelector('input[name="seats"]:checked').value;
+    const sort = document.getElementById('sort-select').value;
+
+    let filtered = allCars.filter(car => {
+      if (activeCategory && car.category !== activeCategory) return false;
+      if (car.price_per_day > maxPrice) return false;
+      if (search && !car.name.toLowerCase().includes(search) && !car.brand.toLowerCase().includes(search)) return false;
+      if (!fuels.includes(car.fuel_type)) return false;
+      if (!trans.includes(car.transmission)) return false;
+      if (seats && car.seats < Number(seats)) return false;
+      return true;
+    });
+
+    if (sort === 'price-asc') filtered.sort((a, b) => a.price_per_day - b.price_per_day);
+    else if (sort === 'price-desc') filtered.sort((a, b) => b.price_per_day - a.price_per_day);
+    else if (sort === 'name') filtered.sort((a, b) => a.name.localeCompare(b.name));
+    else filtered.sort((a, b) => (b.is_featured - a.is_featured) || (a.price_per_day - b.price_per_day));
+
+    return filtered;
+  }
+
+  function renderCars() {
+    const cars = getFilteredCars();
+    const grid = document.getElementById('cars-grid');
+    const noResults = document.getElementById('no-results');
+    const count = document.getElementById('cars-count');
+
+    count.textContent = `${cars.length} véhicule${cars.length !== 1 ? 's' : ''} trouvé${cars.length !== 1 ? 's' : ''}`;
+
+    if (!cars.length) {
+      grid.innerHTML = '';
+      noResults.classList.remove('d-none');
+      return;
+    }
+
+    noResults.classList.add('d-none');
+    grid.innerHTML = cars.map(car => LTC.renderCarCard(car)).join('');
+    LTC.initAnimations();
+  }
+
+  // Category tabs
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeCategory = tab.dataset.category;
+      renderCars();
+    });
+  });
+
+  // Price range
+  const priceRange = document.getElementById('price-range');
+  const priceDisplay = document.getElementById('price-display');
+  priceRange.addEventListener('input', () => {
+    priceDisplay.textContent = `≤ ${priceRange.value} MAD`;
+    renderCars();
+  });
+
+  // Search
+  let searchTimeout;
+  document.getElementById('search-input').addEventListener('input', () => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(renderCars, 300);
+  });
+
+  // Other filters
+  document.querySelectorAll('.fuel-filter, .trans-filter, input[name="seats"]').forEach(el => {
+    el.addEventListener('change', renderCars);
+  });
+  document.getElementById('sort-select').addEventListener('change', renderCars);
+
+  // Reset
+  document.getElementById('reset-filters').addEventListener('click', () => {
+    document.getElementById('search-input').value = '';
+    priceRange.value = 2000;
+    priceDisplay.textContent = '≤ 2000 MAD';
+    document.querySelectorAll('.fuel-filter, .trans-filter').forEach(el => el.checked = true);
+    document.querySelector('input[name="seats"][value=""]').checked = true;
+    document.getElementById('sort-select').value = 'featured';
+    activeCategory = '';
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('active', t.dataset.category === ''));
+    renderCars();
+  });
+
+  loadCars();
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Node dependencies
+node_modules/
+
+# SQLite database files (auto-created at runtime)
+database/*.db
+database/*.db-shm
+database/*.db-wal
+
+# Environment variables
+.env
+.env.local
+
+# User-uploaded images (not part of source)
+public/uploads/cars/*
+!public/uploads/cars/.gitkeep
+
+# Windows bat file (local only)
+*.bat
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

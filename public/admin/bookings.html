@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réservations – Admin · DAHBI CAR</title>
+  <link rel="shortcut icon" href="/images/logo.png">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+  <div id="sidebar-container"></div>
+  <div class="admin-main">
+    <div id="topbar-container"></div>
+    <div class="admin-content">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+        <div>
+          <div class="page-title">Réservations</div>
+          <div class="page-subtitle">Gérez les demandes de location de vos clients.</div>
+        </div>
+        <button class="btn btn-outline" id="btn-export">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Exporter CSV
+        </button>
+      </div>
+
+      <!-- Stats row -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem">
+        <div class="stat-card"><div class="stat-icon orange"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="stat-number" id="count-pending">—</div><div class="stat-label">En attente</div></div></div>
+        <div class="stat-card"><div class="stat-icon blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg></div><div><div class="stat-number" id="count-confirmed">—</div><div class="stat-label">Confirmées</div></div></div>
+        <div class="stat-card"><div class="stat-icon green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="stat-number" id="count-completed">—</div><div class="stat-label">Terminées</div></div></div>
+        <div class="stat-card"><div class="stat-icon red"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><div class="stat-number" id="count-cancelled">—</div><div class="stat-label">Annulées</div></div></div>
+      </div>
+
+      <!-- Filters -->
+      <div class="table-card" style="margin-bottom:1rem;padding:1rem 1.25rem">
+        <div class="toolbar">
+          <div class="search-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" class="search-input" id="bk-search" placeholder="Nom, email, référence...">
+          </div>
+          <select class="form-control" id="bk-status" style="width:auto;padding:.5rem .875rem">
+            <option value="">Tous les statuts</option>
+            <option value="pending">En attente</option>
+            <option value="confirmed">Confirmée</option>
+            <option value="active">En cours</option>
+            <option value="completed">Terminée</option>
+            <option value="cancelled">Annulée</option>
+          </select>
+          <input type="date" class="form-control" id="bk-date-from" style="width:auto;padding:.5rem .875rem">
+          <input type="date" class="form-control" id="bk-date-to" style="width:auto;padding:.5rem .875rem">
+          <span id="bk-count-label" style="font-size:.85rem;color:#94a3b8;margin-left:auto"></span>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="table-card">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Référence</th>
+                <th>Client</th>
+                <th>Voiture</th>
+                <th>Dates</th>
+                <th>Montant</th>
+                <th>Statut</th>
+                <th style="text-align:right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="bk-tbody">
+              <tr><td colspan="7"><div class="empty-state"><div class="spinner" style="margin:0 auto"></div></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Detail Modal -->
+<div class="modal-overlay" id="bk-modal" style="display:none">
+  <div class="modal" style="max-width:580px">
+    <div class="modal-header">
+      <span class="modal-title">Détails de la réservation</span>
+      <button class="modal-close" onclick="document.getElementById('bk-modal').style.display='none'">✕</button>
+    </div>
+    <div class="modal-body" id="bk-modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="document.getElementById('bk-modal').style.display='none'">Fermer</button>
+      <div id="bk-modal-actions" style="display:flex;gap:.5rem"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/admin.js"></script>
+<script>
+  const { requireAuth, adminApi, toast, getSidebarHTML, getTopbarHTML, initAdminResponsive, formatDate, formatMAD } = AdminUtils;
+  if (!requireAuth()) throw new Error('unauth');
+
+  document.getElementById('sidebar-container').innerHTML = getSidebarHTML('/admin/bookings');
+  document.getElementById('topbar-container').innerHTML = getTopbarHTML('Réservations');
+  initAdminResponsive();
+
+  let allBookings = [];
+
+  const statusLabels = { pending:'En attente', confirmed:'Confirmée', active:'En cours', completed:'Terminée', cancelled:'Annulée' };
+  const statusClass = { pending:'status-pending', confirmed:'status-confirmed', active:'status-active', completed:'status-completed', cancelled:'status-cancelled' };
+
+  async function loadBookings() {
+    try {
+      const { bookings } = await adminApi.get('/api/admin/bookings');
+      allBookings = bookings;
+      updateCounts();
+      renderBookings();
+    } catch (err) { toast(err.message, 'error'); }
+  }
+
+  function updateCounts() {
+    ['pending','confirmed','completed','cancelled'].forEach(s => {
+      document.getElementById(`count-${s}`).textContent = allBookings.filter(b => b.status === s).length;
+    });
+  }
+
+  function renderBookings() {
+    const search = document.getElementById('bk-search').value.toLowerCase();
+    const status = document.getElementById('bk-status').value;
+    const dateFrom = document.getElementById('bk-date-from').value;
+    const dateTo = document.getElementById('bk-date-to').value;
+
+    let filtered = allBookings.filter(b => {
+      if (search && !b.customer_name.toLowerCase().includes(search) && !b.customer_email.toLowerCase().includes(search) && !b.booking_ref.toLowerCase().includes(search)) return false;
+      if (status && b.status !== status) return false;
+      if (dateFrom && b.pickup_date < dateFrom) return false;
+      if (dateTo && b.pickup_date > dateTo) return false;
+      return true;
+    });
+
+    document.getElementById('bk-count-label').textContent = `${filtered.length} réservation${filtered.length !== 1 ? 's' : ''}`;
+
+    const tbody = document.getElementById('bk-tbody');
+    if (!filtered.length) {
+      tbody.innerHTML = '<tr><td colspan="7"><div class="empty-state"><p>Aucune réservation trouvée</p></div></td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(b => `
+      <tr>
+        <td><code style="font-size:.8rem;color:#f97316;font-weight:700">${b.booking_ref}</code></td>
+        <td>
+          <div style="font-weight:600;font-size:.875rem">${b.customer_name}</div>
+          <div style="font-size:.75rem;color:#94a3b8">${b.customer_email}</div>
+          <div style="font-size:.75rem;color:#94a3b8">${b.customer_phone}</div>
+        </td>
+        <td style="font-size:.8rem;color:#334155">${b.car_name || '—'}</td>
+        <td>
+          <div style="font-size:.8rem"><strong>${formatDate(b.pickup_date)}</strong></div>
+          <div style="font-size:.75rem;color:#94a3b8">→ ${formatDate(b.return_date)}</div>
+          <div style="font-size:.75rem;color:#64748b">${b.days} jour${b.days > 1 ? 's' : ''}</div>
+        </td>
+        <td style="font-weight:700;color:#f97316">${formatMAD(b.total_price)}</td>
+        <td><span class="status ${statusClass[b.status] || ''}">${statusLabels[b.status] || b.status}</span></td>
+        <td style="text-align:right">
+          <div style="display:flex;gap:.4rem;justify-content:flex-end">
+            <button class="btn btn-outline btn-sm" onclick="viewBooking(${b.id})">Voir</button>
+            ${b.status === 'pending' ? `<button class="btn btn-success btn-sm" onclick="changeStatus(${b.id},'confirmed')">✓</button>` : ''}
+            ${b.status !== 'cancelled' && b.status !== 'completed' ? `<button class="btn btn-danger btn-sm" onclick="changeStatus(${b.id},'cancelled')">✗</button>` : ''}
+          </div>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  // Filters
+  ['bk-search','bk-status','bk-date-from','bk-date-to'].forEach(id => {
+    document.getElementById(id).addEventListener('input', renderBookings);
+    document.getElementById(id).addEventListener('change', renderBookings);
+  });
+
+  async function changeStatus(id, status) {
+    try {
+      await adminApi.put(`/api/admin/bookings/${id}/status`, { status });
+      toast(`Statut mis à jour : ${statusLabels[status]}`);
+      await loadBookings();
+    } catch (err) { toast(err.message, 'error'); }
+  }
+
+  function viewBooking(id) {
+    const b = allBookings.find(bk => bk.id === id);
+    if (!b) return;
+
+    document.getElementById('bk-modal-body').innerHTML = `
+      <div style="display:grid;gap:.5rem">
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Référence</span><strong style="color:#f97316">${b.booking_ref}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Client</span><strong>${b.customer_name}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Email</span><span>${b.customer_email}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Téléphone</span><a href="tel:${b.customer_phone}" style="color:#f97316">${b.customer_phone}</a></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Voiture</span><strong>${b.car_name || '—'}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Lieu prise</span><span>${b.pickup_location}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Départ</span><strong>${formatDate(b.pickup_date)}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Retour</span><strong>${formatDate(b.return_date)}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Durée</span><span>${b.days} jour${b.days > 1 ? 's' : ''}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Montant</span><strong style="color:#f97316;font-size:1.1rem">${formatMAD(b.total_price)}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f1f5f9"><span style="color:#64748b">Statut</span><span class="status ${statusClass[b.status]}">${statusLabels[b.status]}</span></div>
+        ${b.notes ? `<div style="padding:.75rem 0"><span style="color:#64748b;display:block;margin-bottom:.3rem">Notes</span><p style="font-size:.875rem;color:#334155">${b.notes}</p></div>` : ''}
+      </div>
+    `;
+
+    const actions = document.getElementById('bk-modal-actions');
+    actions.innerHTML = `
+      <a href="tel:${b.customer_phone}" class="btn btn-outline btn-sm">📞 Appeler</a>
+      <a href="https://wa.me/${b.customer_phone.replace(/\D/g,'')}" target="_blank" class="btn btn-success btn-sm">WhatsApp</a>
+      ${b.status === 'pending' ? `<button class="btn btn-primary btn-sm" onclick="changeStatus(${b.id},'confirmed');document.getElementById('bk-modal').style.display='none'">Confirmer</button>` : ''}
+      ${b.status === 'confirmed' ? `<button class="btn btn-success btn-sm" onclick="changeStatus(${b.id},'completed');document.getElementById('bk-modal').style.display='none'">Terminer</button>` : ''}
+    `;
+
+    document.getElementById('bk-modal').style.display = 'flex';
+  }
+
+  // Export CSV
+  document.getElementById('btn-export').addEventListener('click', () => {
+    const headers = ['Référence','Client','Email','Téléphone','Voiture','Départ','Retour','Jours','Total MAD','Statut'];
+    const rows = allBookings.map(b => [
+      b.booking_ref, b.customer_name, b.customer_email, b.customer_phone,
+      b.car_name || '', b.pickup_date, b.return_date, b.days, b.total_price, b.status
+    ]);
+    const csv = [headers, ...rows].map(r => r.map(v => `"${v}"`).join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'reservations-DahbiCarcars.csv'; a.click();
+    URL.revokeObjectURL(url);
+    toast('Export CSV téléchargé.');
+  });
+
+  loadBookings();
+</script>
+</body>
+</html>
