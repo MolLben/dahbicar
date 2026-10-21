@@ -1,1 +1,929 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1203],{8499:function(e,t,r){Promise.resolve().then(r.bind(r,79441)),Promise.resolve().then(r.bind(r,92834)),Promise.resolve().then(r.bind(r,84272)),Promise.resolve().then(r.bind(r,24792)),Promise.resolve().then(r.bind(r,52906))},92834:function(e,t,r){"use strict";r.d(t,{default:function(){return m}});var a=r(57437),n=r(44971),s=r(27648),l=r(33145),o=r(25763),c=r(69811),i=r(71456),d=r(38470),h=r(93448),x=r(38706);function m(e){let{phone:t=h.UE,whatsapp:r=h.NY,email:m=h.xK,address:u=h.o4,workingHours:g=h.ku}=e,f=(0,x.T)("footer"),b=(0,x.T)("nav"),p=[{href:"/",label:b("home")},{href:"/cars",label:b("cars")},{href:"/transport",label:b("transport")},{href:"/location-longue-duree",label:b("longTerm")},{href:"/about",label:b("about")},{href:"/blog",label:b("blog")},{href:"/contact",label:b("contact")}],v=[{href:"/cars?category=SUV",label:f("cats.suv")},{href:"/cars?category=Berline",label:f("cats.sedan")},{href:"/cars?category=Luxe",label:f("cats.luxury")},{href:"/cars?category=Familiale",label:f("cats.family")},{href:"/cars?category=Utilitaire",label:f("cats.utility")}];return(0,a.jsx)("footer",{className:"bg-dark text-white",children:(0,a.jsxs)("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16",children:[(0,a.jsxs)("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10",children:[(0,a.jsxs)("div",{className:"lg:col-span-1",children:[(0,a.jsx)("div",{className:"mb-4",children:(0,a.jsx)(l.default,{src:"/logo.png",alt:"Lux Time Cars",width:150,height:60,className:"h-14 w-auto object-contain brightness-0 invert"})}),(0,a.jsx)("p",{className:"text-gray-400 text-sm leading-relaxed mb-6",children:f("tagline")}),(0,a.jsxs)("a",{href:"https://wa.me/".concat(r.replace(/\D/g,"")),target:"_blank",rel:"noopener noreferrer",className:"flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors mb-5",children:[(0,a.jsx)(n.Z,{className:"w-4 h-4"}),f("whatsapp")]}),(0,a.jsx)("p",{className:"text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3",children:f("followUs")}),(0,a.jsxs)("div",{className:"flex items-center gap-3",children:[(0,a.jsxs)("a",{href:"https://www.facebook.com/luxtime.cars",target:"_blank",rel:"noopener noreferrer",className:"flex items-center gap-2 bg-[#0d65d9] hover:bg-[#0a50b0] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:-translate-y-0.5","aria-label":f("facebook"),children:[(0,a.jsx)("svg",{className:"w-4 h-4",fill:"currentColor",viewBox:"0 0 24 24",children:(0,a.jsx)("path",{d:"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"})}),"Facebook"]}),(0,a.jsxs)("a",{href:"https://www.instagram.com/luxtimecars/",target:"_blank",rel:"noopener noreferrer",className:"flex items-center gap-2 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:-translate-y-0.5",style:{background:"linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)"},"aria-label":f("instagram"),children:[(0,a.jsx)("svg",{className:"w-4 h-4",fill:"currentColor",viewBox:"0 0 24 24",children:(0,a.jsx)("path",{d:"M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"})}),"Instagram"]})]})]}),(0,a.jsxs)("div",{children:[(0,a.jsx)("h2",{className:"text-white font-semibold mb-5 text-sm uppercase tracking-wider",children:f("navigation")}),(0,a.jsx)("ul",{className:"space-y-2.5",children:p.map(e=>(0,a.jsx)("li",{children:(0,a.jsxs)(s.default,{href:e.href,className:"text-gray-400 hover:text-brand-orange text-sm transition-colors flex items-center gap-2 group",children:[(0,a.jsx)("span",{className:"w-1 h-1 bg-brand-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"}),e.label]})},e.href))})]}),(0,a.jsxs)("div",{children:[(0,a.jsx)("h2",{className:"text-white font-semibold mb-5 text-sm uppercase tracking-wider",children:f("categories")}),(0,a.jsx)("ul",{className:"space-y-2.5",children:v.map(e=>(0,a.jsx)("li",{children:(0,a.jsxs)(s.default,{href:e.href,className:"text-gray-400 hover:text-brand-orange text-sm transition-colors flex items-center gap-2 group",children:[(0,a.jsx)("span",{className:"w-1 h-1 bg-brand-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"}),e.label]})},e.href))})]}),(0,a.jsxs)("div",{children:[(0,a.jsx)("h2",{className:"text-white font-semibold mb-5 text-sm uppercase tracking-wider",children:"Contact"}),(0,a.jsxs)("ul",{className:"space-y-4",children:[(0,a.jsxs)("li",{className:"flex items-start gap-3",children:[(0,a.jsx)(o.Z,{className:"w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0"}),(0,a.jsx)("span",{className:"text-gray-400 text-sm",children:u})]}),(0,a.jsxs)("li",{className:"flex items-center gap-3",children:[(0,a.jsx)(c.Z,{className:"w-4 h-4 text-brand-orange flex-shrink-0"}),(0,a.jsx)("a",{href:"tel:".concat(t),className:"text-gray-400 hover:text-white text-sm transition-colors",children:t})]}),(0,a.jsxs)("li",{className:"flex items-center gap-3",children:[(0,a.jsx)(i.Z,{className:"w-4 h-4 text-brand-orange flex-shrink-0"}),(0,a.jsx)("a",{href:"mailto:".concat(m),className:"text-gray-400 hover:text-white text-sm transition-colors",children:m})]}),(0,a.jsxs)("li",{className:"flex items-start gap-3",children:[(0,a.jsx)(d.Z,{className:"w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0"}),(0,a.jsx)("span",{className:"text-gray-400 text-sm",children:g})]})]})]})]}),(0,a.jsx)("div",{className:"mt-12 pt-8 border-t border-white/10",children:(0,a.jsxs)("div",{className:"flex flex-col sm:flex-row items-center justify-between gap-4",children:[(0,a.jsx)("p",{className:"text-gray-400 text-sm",children:f("rights",{year:new Date().getFullYear()})}),(0,a.jsxs)("div",{className:"flex items-center gap-6 text-sm text-gray-400",children:[(0,a.jsx)(s.default,{href:"/confidentialite",className:"hover:text-brand-orange transition-colors",children:f("privacy")}),(0,a.jsx)(s.default,{href:"/cgv",className:"hover:text-brand-orange transition-colors",children:f("cgv")})]})]})})]})})}},84272:function(e,t,r){"use strict";r.d(t,{default:function(){return s}});var a=r(57437),n=r(99376);function s(e){let{children:t}=e;return(0,n.usePathname)().startsWith("/admin")?null:(0,a.jsx)(a.Fragment,{children:t})}},24792:function(e,t,r){"use strict";r.d(t,{default:function(){return s}});var a=r(2265),n=r(17637);function s(){let e=(0,n.bU)();return(0,a.useEffect)(()=>{document.documentElement.lang=e,document.documentElement.dir="ar"===e?"rtl":"ltr"},[e]),null}},52906:function(e,t,r){"use strict";r.d(t,{default:function(){return v}});var a=r(57437),n=r(2265),s=r(27648),l=r(33145),o=r(68144),c=r(57586),i=r(36247),d=r(17166),h=r(69811),x=r(54891),m=r(50420),u=r(93448),g=r(38706),f=r(17637);let b=[{code:"fr",flag:"\uD83C\uDDEB\uD83C\uDDF7",label:"Fran\xe7ais"},{code:"en",flag:"\uD83C\uDDEC\uD83C\uDDE7",label:"English"},{code:"ar",flag:"\uD83C\uDDF8\uD83C\uDDE6",label:"العربية"},{code:"es",flag:"\uD83C\uDDEA\uD83C\uDDF8",label:"Espa\xf1ol"}];function p(e){var t;let{solidNav:r,inline:s}=e,l=(0,f.bU)(),c=(0,o.tv)(),i=(0,o.jD)(),[h,x]=(0,n.useState)(!1),m=(0,n.useRef)(null),u=null!==(t=b.find(e=>e.code===l))&&void 0!==t?t:b[0],g=e=>{c.replace(i,{locale:e}),x(!1)};return((0,n.useEffect)(()=>{let e=e=>{m.current&&!m.current.contains(e.target)&&x(!1)};return document.addEventListener("mousedown",e),()=>document.removeEventListener("mousedown",e)},[]),s)?(0,a.jsx)("div",{className:"flex items-center gap-1.5",children:b.map(e=>(0,a.jsxs)("button",{onClick:()=>g(e.code),className:"flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all duration-200 ".concat(e.code===l?"bg-brand-orange-dark text-white border-brand-orange-dark":"text-gray-600 border-gray-200 hover:border-brand-orange/40 hover:text-brand-orange"),children:[(0,a.jsx)("span",{className:"text-sm leading-none",children:e.flag}),(0,a.jsx)("span",{className:"uppercase tracking-wide",children:e.code})]},e.code))}):(0,a.jsxs)("div",{ref:m,className:"relative",children:[(0,a.jsxs)("button",{onClick:()=>x(e=>!e),className:"flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ".concat(r?"text-gray-600 hover:text-brand-orange hover:bg-orange-50 border border-gray-200 hover:border-brand-orange/30":"text-white/80 hover:text-white bg-white/10 hover:bg-white/20 border border-white/20"),"aria-haspopup":"listbox","aria-expanded":h,children:[(0,a.jsx)("span",{className:"text-base leading-none",children:u.flag}),(0,a.jsx)("span",{className:"uppercase tracking-wide",children:u.code}),(0,a.jsx)(d.Z,{className:"w-3.5 h-3.5 transition-transform duration-200 ".concat(h?"rotate-180":"")})]}),h&&(0,a.jsx)("div",{className:"absolute right-0 top-full mt-2 w-44 bg-white rounded-xl shadow-card-hover border border-gray-100 overflow-hidden z-50",children:b.map(e=>(0,a.jsxs)("button",{role:"option","aria-selected":e.code===l,onClick:()=>g(e.code),className:"w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors text-left ".concat(e.code===l?"bg-brand-orange/10 text-brand-orange font-semibold":"text-gray-700 hover:bg-gray-50 hover:text-brand-orange"),children:[(0,a.jsx)("span",{className:"text-base",children:e.flag}),(0,a.jsx)("span",{children:e.label}),e.code===l&&(0,a.jsx)("span",{className:"ml-auto w-1.5 h-1.5 rounded-full bg-brand-orange"})]},e.code))})]})}function v(){let[e,t]=(0,n.useState)(!1),[r,f]=(0,n.useState)(!1),[b,v]=(0,n.useState)(!1),j=(0,o.jD)(),w=(0,g.T)("nav"),N=[{href:"/",label:w("home")},{href:"/cars",label:w("cars")},{label:w("services"),children:[{href:"/transport",label:w("transport")},{href:"/location-longue-duree",label:w("longTerm")}]},{href:"/about",label:w("about")},{href:"/blog",label:w("blog")},{href:"/contact",label:w("contact")}];(0,n.useEffect)(()=>{let e=()=>f(window.scrollY>20);return window.addEventListener("scroll",e),()=>window.removeEventListener("scroll",e)},[]),(0,n.useEffect)(()=>{t(!1)},[j]);let y=e=>j===e;if(j.startsWith("/admin"))return null;let k=!(["/","/cars","/transport","/location-longue-duree","/about","/contact","/confidentialite","/cgv"].includes(j)||["/cars/suv","/cars/berline","/cars/luxe","/cars/familiale","/cars/utilitaire"].includes(j))||r;return(0,a.jsxs)("header",{className:"fixed top-0 left-0 right-0 z-50 transition-all duration-300 ".concat(k?"bg-white/95 backdrop-blur-md shadow-lg":"bg-transparent"),children:[(0,a.jsx)("nav",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:(0,a.jsxs)("div",{className:"flex items-center justify-between h-20",children:[(0,a.jsx)(s.default,{href:"/",className:"flex items-center flex-shrink-0",children:(0,a.jsx)(l.default,{src:"/logo.png",alt:"Lux Time Cars",width:140,height:56,className:"h-14 w-auto object-contain transition-all duration-300 ".concat(k?"brightness-100":"brightness-0 invert"),priority:!0})}),(0,a.jsx)("div",{className:"hidden lg:flex items-center gap-1",children:N.map(e=>e.children?(0,a.jsxs)("div",{className:"relative group",children:[(0,a.jsxs)("button",{className:"flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ".concat(k?"text-dark hover:text-brand-orange hover:bg-orange-50":"text-white/90 hover:text-white hover:bg-white/10"),onMouseEnter:()=>v(!0),onMouseLeave:()=>v(!1),children:[e.label,(0,a.jsx)(d.Z,{className:"w-4 h-4 transition-transform group-hover:rotate-180"})]}),(0,a.jsx)(c.M,{children:b&&(0,a.jsx)(i.E.div,{initial:{opacity:0,y:8},animate:{opacity:1,y:0},exit:{opacity:0,y:8},transition:{duration:.15},className:"absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-card-hover border border-gray-100 overflow-hidden",onMouseEnter:()=>v(!0),onMouseLeave:()=>v(!1),children:e.children.map(e=>(0,a.jsx)(s.default,{href:e.href,className:"block px-4 py-3 text-sm font-medium transition-colors hover:bg-orange-50 hover:text-brand-orange ".concat(y(e.href)?"text-brand-orange bg-orange-50":"text-dark"),children:e.label},e.href))})})]},e.label):(0,a.jsx)(s.default,{href:e.href,className:"px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ".concat(y(e.href)?"text-brand-orange bg-orange-50":k?"text-dark hover:text-brand-orange hover:bg-orange-50":"text-white/90 hover:text-white hover:bg-white/10"),children:e.label},e.href))}),(0,a.jsxs)("div",{className:"hidden lg:flex items-center gap-3",children:[(0,a.jsx)(p,{solidNav:k}),(0,a.jsxs)("a",{href:"tel:".concat(u.UE),className:"flex items-center gap-2 text-sm font-medium transition-colors ".concat(k?"text-brand-blue hover:text-brand-orange":"text-white hover:text-brand-orange"),children:[(0,a.jsx)(h.Z,{className:"w-4 h-4"}),(0,a.jsx)("span",{children:u.UE})]}),"/transport"===j||"/location-longue-duree"===j?(0,a.jsx)("a",{href:"#contact-form",className:"btn-primary text-sm py-2.5 whitespace-nowrap",children:w("quoteBtn")}):"/cars"===j?(0,a.jsx)("a",{href:"#cars-grid",className:"btn-primary text-sm py-2.5",children:w("book")}):(0,a.jsx)(s.default,{href:"/cars",className:"btn-primary text-sm py-2.5",children:w("book")})]}),(0,a.jsx)("button",{onClick:()=>t(!e),className:"lg:hidden p-2 rounded-lg transition-colors ".concat(k?"text-dark hover:bg-gray-100":"text-white hover:bg-white/10"),"aria-label":"Toggle menu",children:e?(0,a.jsx)(x.Z,{className:"w-6 h-6"}):(0,a.jsx)(m.Z,{className:"w-6 h-6"})})]})}),(0,a.jsx)(c.M,{children:e&&(0,a.jsx)(i.E.div,{initial:{opacity:0,height:0},animate:{opacity:1,height:"auto"},exit:{opacity:0,height:0},transition:{duration:.25},className:"lg:hidden bg-white border-t border-gray-100 shadow-lg overflow-hidden",children:(0,a.jsxs)("div",{className:"px-4 py-4 space-y-1",children:[N.map(e=>e.children?(0,a.jsxs)("div",{children:[(0,a.jsx)("p",{className:"px-3 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider",children:e.label}),e.children.map(e=>(0,a.jsx)(s.default,{href:e.href,className:"block px-6 py-2.5 rounded-lg text-sm font-medium transition-colors ".concat(y(e.href)?"text-brand-orange bg-orange-50":"text-dark hover:bg-gray-50 hover:text-brand-orange"),children:e.label},e.href))]},e.label):(0,a.jsx)(s.default,{href:e.href,className:"block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ".concat(y(e.href)?"text-brand-orange bg-orange-50":"text-dark hover:bg-gray-50 hover:text-brand-orange"),children:e.label},e.href)),(0,a.jsxs)("div",{className:"pt-4 border-t border-gray-100 flex flex-col gap-3",children:[(0,a.jsxs)("div",{className:"flex flex-col gap-2 px-3",children:[(0,a.jsxs)("a",{href:"tel:".concat(u.UE),className:"flex items-center gap-2 py-2 text-sm font-medium text-brand-blue",children:[(0,a.jsx)(h.Z,{className:"w-4 h-4"}),u.UE]}),(0,a.jsx)(p,{solidNav:!0,inline:!0})]}),"/cars"===j?(0,a.jsx)("a",{href:"#cars-grid",className:"btn-primary text-center text-sm",children:w("bookCar")}):(0,a.jsx)(s.default,{href:"/cars",className:"btn-primary text-center text-sm",children:w("bookCar")})]})]})})})]})}},44971:function(e,t,r){"use strict";r.d(t,{Z:function(){return n}});var a=r(57437);function n(e){let{className:t="w-5 h-5"}=e;return(0,a.jsx)("svg",{className:t,viewBox:"0 0 24 24",fill:"currentColor",xmlns:"http://www.w3.org/2000/svg",children:(0,a.jsx)("path",{d:"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"})})}},93448:function(e,t,r){"use strict";r.d(t,{NY:function(){return i},T4:function(){return l},UE:function(){return d},cn:function(){return s},ku:function(){return m},o4:function(){return x},ow:function(){return c},p6:function(){return o},xK:function(){return h}});var a=r(61994),n=r(53335);function s(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return(0,n.m6)((0,a.W)(t))}function l(e){return new Intl.NumberFormat("fr-MA",{style:"currency",currency:"MAD",minimumFractionDigits:0,maximumFractionDigits:0}).format(e)}function o(e){return new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"long",year:"numeric"}).format(new Date(e))}function c(e,t){let r=new Date(e);return Math.ceil((new Date(t).getTime()-r.getTime())/864e5)}let i="+212660707200",d="+212660707200",h="luxtimecontact@gmail.com",x="Inara 02, 44 Rue 01, Casablanca 20470, Maroc",m="Lun-Sam: 8h-20h | Dim: 9h-18h"},68144:function(e,t,r){"use strict";r.d(t,{rU:function(){return s},jD:function(){return o},tv:function(){return c}});var a=r(49198);let n=(0,r(35426).Z)({locales:["fr","en","ar","es"],defaultLocale:"fr",localePrefix:"as-needed",localeDetection:!1}),{Link:s,redirect:l,usePathname:o,useRouter:c,getPathname:i}=(0,a.Z)(n)}},function(e){e.O(0,[2972,3145,6137,208,3231,8639,2971,2117,1744],function(){return e(e.s=8499)}),_N_E=e.O()}]);
+(self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
+  [1203],
+  {
+    8499: function (e, t, r) {
+      (Promise.resolve().then(r.bind(r, 79441)),
+        Promise.resolve().then(r.bind(r, 92834)),
+        Promise.resolve().then(r.bind(r, 84272)),
+        Promise.resolve().then(r.bind(r, 24792)),
+        Promise.resolve().then(r.bind(r, 52906)));
+    },
+    92834: function (e, t, r) {
+      "use strict";
+      r.d(t, {
+        default: function () {
+          return m;
+        },
+      });
+      var a = r(57437),
+        n = r(44971),
+        s = r(27648),
+        l = r(33145),
+        o = r(25763),
+        c = r(69811),
+        i = r(71456),
+        d = r(38470),
+        h = r(93448),
+        x = r(38706);
+      function m(e) {
+        let {
+            phone: t = h.UE,
+            whatsapp: r = h.NY,
+            email: m = h.xK,
+            address: u = h.o4,
+            workingHours: g = h.ku,
+          } = e,
+          f = (0, x.T)("footer"),
+          b = (0, x.T)("nav"),
+          p = [
+            { href: "/", label: b("home") },
+            { href: "/cars", label: b("cars") },
+            { href: "/transport", label: b("transport") },
+            { href: "/location-longue-duree", label: b("longTerm") },
+            { href: "/about", label: b("about") },
+            { href: "/blog", label: b("blog") },
+            { href: "/contact", label: b("contact") },
+          ],
+          v = [
+            { href: "/cars?category=SUV", label: f("cats.suv") },
+            { href: "/cars?category=Berline", label: f("cats.sedan") },
+            { href: "/cars?category=Luxe", label: f("cats.luxury") },
+            { href: "/cars?category=Familiale", label: f("cats.family") },
+            { href: "/cars?category=Utilitaire", label: f("cats.utility") },
+          ];
+        return (0, a.jsx)("footer", {
+          className: "bg-dark text-white",
+          children: (0, a.jsxs)("div", {
+            className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16",
+            children: [
+              (0, a.jsxs)("div", {
+                className:
+                  "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10",
+                children: [
+                  (0, a.jsxs)("div", {
+                    className: "lg:col-span-1",
+                    children: [
+                      (0, a.jsx)("div", {
+                        className: "mb-4",
+                        children: (0, a.jsx)(l.default, {
+                          src: "/logo.png",
+                          alt: "Lux Time Cars",
+                          width: 150,
+                          height: 60,
+                          className:
+                            "h-14 w-auto object-contain brightness-0 invert",
+                        }),
+                      }),
+                      (0, a.jsx)("p", {
+                        className: "text-gray-400 text-sm leading-relaxed mb-6",
+                        children: f("tagline"),
+                      }),
+                      (0, a.jsxs)("a", {
+                        href: "https://wa.me/".concat(r.replace(/\D/g, "")),
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        className:
+                          "flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors mb-5",
+                        children: [
+                          (0, a.jsx)(n.Z, { className: "w-4 h-4" }),
+                          f("whatsapp"),
+                        ],
+                      }),
+                      (0, a.jsx)("p", {
+                        className:
+                          "text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3",
+                        children: f("followUs"),
+                      }),
+                      (0, a.jsxs)("div", {
+                        className: "flex items-center gap-3",
+                        children: [
+                          (0, a.jsxs)("a", {
+                            href: "https://www.facebook.com/luxtime.cars",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className:
+                              "flex items-center gap-2 bg-[#0d65d9] hover:bg-[#0a50b0] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:-translate-y-0.5",
+                            "aria-label": f("facebook"),
+                            children: [
+                              (0, a.jsx)("svg", {
+                                className: "w-4 h-4",
+                                fill: "currentColor",
+                                viewBox: "0 0 24 24",
+                                children: (0, a.jsx)("path", {
+                                  d: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z",
+                                }),
+                              }),
+                              "Facebook",
+                            ],
+                          }),
+                          (0, a.jsxs)("a", {
+                            href: "https://www.instagram.com/luxtimecars/",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className:
+                              "flex items-center gap-2 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:-translate-y-0.5",
+                            style: {
+                              background:
+                                "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
+                            },
+                            "aria-label": f("instagram"),
+                            children: [
+                              (0, a.jsx)("svg", {
+                                className: "w-4 h-4",
+                                fill: "currentColor",
+                                viewBox: "0 0 24 24",
+                                children: (0, a.jsx)("path", {
+                                  d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
+                                }),
+                              }),
+                              "Instagram",
+                            ],
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                  (0, a.jsxs)("div", {
+                    children: [
+                      (0, a.jsx)("h2", {
+                        className:
+                          "text-white font-semibold mb-5 text-sm uppercase tracking-wider",
+                        children: f("navigation"),
+                      }),
+                      (0, a.jsx)("ul", {
+                        className: "space-y-2.5",
+                        children: p.map((e) =>
+                          (0, a.jsx)(
+                            "li",
+                            {
+                              children: (0, a.jsxs)(s.default, {
+                                href: e.href,
+                                className:
+                                  "text-gray-400 hover:text-brand-orange text-sm transition-colors flex items-center gap-2 group",
+                                children: [
+                                  (0, a.jsx)("span", {
+                                    className:
+                                      "w-1 h-1 bg-brand-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity",
+                                  }),
+                                  e.label,
+                                ],
+                              }),
+                            },
+                            e.href,
+                          ),
+                        ),
+                      }),
+                    ],
+                  }),
+                  (0, a.jsxs)("div", {
+                    children: [
+                      (0, a.jsx)("h2", {
+                        className:
+                          "text-white font-semibold mb-5 text-sm uppercase tracking-wider",
+                        children: f("categories"),
+                      }),
+                      (0, a.jsx)("ul", {
+                        className: "space-y-2.5",
+                        children: v.map((e) =>
+                          (0, a.jsx)(
+                            "li",
+                            {
+                              children: (0, a.jsxs)(s.default, {
+                                href: e.href,
+                                className:
+                                  "text-gray-400 hover:text-brand-orange text-sm transition-colors flex items-center gap-2 group",
+                                children: [
+                                  (0, a.jsx)("span", {
+                                    className:
+                                      "w-1 h-1 bg-brand-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity",
+                                  }),
+                                  e.label,
+                                ],
+                              }),
+                            },
+                            e.href,
+                          ),
+                        ),
+                      }),
+                    ],
+                  }),
+                  (0, a.jsxs)("div", {
+                    children: [
+                      (0, a.jsx)("h2", {
+                        className:
+                          "text-white font-semibold mb-5 text-sm uppercase tracking-wider",
+                        children: "Contact",
+                      }),
+                      (0, a.jsxs)("ul", {
+                        className: "space-y-4",
+                        children: [
+                          (0, a.jsxs)("li", {
+                            className: "flex items-start gap-3",
+                            children: [
+                              (0, a.jsx)(o.Z, {
+                                className:
+                                  "w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0",
+                              }),
+                              (0, a.jsx)("span", {
+                                className: "text-gray-400 text-sm",
+                                children: u,
+                              }),
+                            ],
+                          }),
+                          (0, a.jsxs)("li", {
+                            className: "flex items-center gap-3",
+                            children: [
+                              (0, a.jsx)(c.Z, {
+                                className:
+                                  "w-4 h-4 text-brand-orange flex-shrink-0",
+                              }),
+                              (0, a.jsx)("a", {
+                                href: "tel:".concat(t),
+                                className:
+                                  "text-gray-400 hover:text-white text-sm transition-colors",
+                                children: t,
+                              }),
+                            ],
+                          }),
+                          (0, a.jsxs)("li", {
+                            className: "flex items-center gap-3",
+                            children: [
+                              (0, a.jsx)(i.Z, {
+                                className:
+                                  "w-4 h-4 text-brand-orange flex-shrink-0",
+                              }),
+                              (0, a.jsx)("a", {
+                                href: "mailto:".concat(m),
+                                className:
+                                  "text-gray-400 hover:text-white text-sm transition-colors",
+                                children: m,
+                              }),
+                            ],
+                          }),
+                          (0, a.jsxs)("li", {
+                            className: "flex items-start gap-3",
+                            children: [
+                              (0, a.jsx)(d.Z, {
+                                className:
+                                  "w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0",
+                              }),
+                              (0, a.jsx)("span", {
+                                className: "text-gray-400 text-sm",
+                                children: g,
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (0, a.jsx)("div", {
+                className: "mt-12 pt-8 border-t border-white/10",
+                children: (0, a.jsxs)("div", {
+                  className:
+                    "flex flex-col sm:flex-row items-center justify-between gap-4",
+                  children: [
+                    (0, a.jsx)("p", {
+                      className: "text-gray-400 text-sm",
+                      children: f("rights", { year: new Date().getFullYear() }),
+                    }),
+                    (0, a.jsxs)("div", {
+                      className:
+                        "flex items-center gap-6 text-sm text-gray-400",
+                      children: [
+                        (0, a.jsx)(s.default, {
+                          href: "/confidentialite",
+                          className:
+                            "hover:text-brand-orange transition-colors",
+                          children: f("privacy"),
+                        }),
+                        (0, a.jsx)(s.default, {
+                          href: "/cgv",
+                          className:
+                            "hover:text-brand-orange transition-colors",
+                          children: f("cgv"),
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              }),
+            ],
+          }),
+        });
+      }
+    },
+    84272: function (e, t, r) {
+      "use strict";
+      r.d(t, {
+        default: function () {
+          return s;
+        },
+      });
+      var a = r(57437),
+        n = r(99376);
+      function s(e) {
+        let { children: t } = e;
+        return (0, n.usePathname)().startsWith("/admin")
+          ? null
+          : (0, a.jsx)(a.Fragment, { children: t });
+      }
+    },
+    24792: function (e, t, r) {
+      "use strict";
+      r.d(t, {
+        default: function () {
+          return s;
+        },
+      });
+      var a = r(2265),
+        n = r(17637);
+      function s() {
+        let e = (0, n.bU)();
+        return (
+          (0, a.useEffect)(() => {
+            ((document.documentElement.lang = e),
+              (document.documentElement.dir = "ar" === e ? "rtl" : "ltr"));
+          }, [e]),
+          null
+        );
+      }
+    },
+    52906: function (e, t, r) {
+      "use strict";
+      r.d(t, {
+        default: function () {
+          return v;
+        },
+      });
+      var a = r(57437),
+        n = r(2265),
+        s = r(27648),
+        l = r(33145),
+        o = r(68144),
+        c = r(57586),
+        i = r(36247),
+        d = r(17166),
+        h = r(69811),
+        x = r(54891),
+        m = r(50420),
+        u = r(93448),
+        g = r(38706),
+        f = r(17637);
+      let b = [
+        { code: "fr", flag: "\uD83C\uDDEB\uD83C\uDDF7", label: "Fran\xe7ais" },
+        { code: "en", flag: "\uD83C\uDDEC\uD83C\uDDE7", label: "English" },
+        { code: "ar", flag: "\uD83C\uDDF8\uD83C\uDDE6", label: "العربية" },
+        { code: "es", flag: "\uD83C\uDDEA\uD83C\uDDF8", label: "Espa\xf1ol" },
+      ];
+      function p(e) {
+        var t;
+        let { solidNav: r, inline: s } = e,
+          l = (0, f.bU)(),
+          c = (0, o.tv)(),
+          i = (0, o.jD)(),
+          [h, x] = (0, n.useState)(!1),
+          m = (0, n.useRef)(null),
+          u =
+            null !== (t = b.find((e) => e.code === l)) && void 0 !== t
+              ? t
+              : b[0],
+          g = (e) => {
+            (c.replace(i, { locale: e }), x(!1));
+          };
+        return ((0, n.useEffect)(() => {
+          let e = (e) => {
+            m.current && !m.current.contains(e.target) && x(!1);
+          };
+          return (
+            document.addEventListener("mousedown", e),
+            () => document.removeEventListener("mousedown", e)
+          );
+        }, []),
+        s)
+          ? (0, a.jsx)("div", {
+              className: "flex items-center gap-1.5",
+              children: b.map((e) =>
+                (0, a.jsxs)(
+                  "button",
+                  {
+                    onClick: () => g(e.code),
+                    className:
+                      "flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all duration-200 ".concat(
+                        e.code === l
+                          ? "bg-brand-orange-dark text-white border-brand-orange-dark"
+                          : "text-gray-600 border-gray-200 hover:border-brand-orange/40 hover:text-brand-orange",
+                      ),
+                    children: [
+                      (0, a.jsx)("span", {
+                        className: "text-sm leading-none",
+                        children: e.flag,
+                      }),
+                      (0, a.jsx)("span", {
+                        className: "uppercase tracking-wide",
+                        children: e.code,
+                      }),
+                    ],
+                  },
+                  e.code,
+                ),
+              ),
+            })
+          : (0, a.jsxs)("div", {
+              ref: m,
+              className: "relative",
+              children: [
+                (0, a.jsxs)("button", {
+                  onClick: () => x((e) => !e),
+                  className:
+                    "flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ".concat(
+                      r
+                        ? "text-gray-600 hover:text-brand-orange hover:bg-orange-50 border border-gray-200 hover:border-brand-orange/30"
+                        : "text-white/80 hover:text-white bg-white/10 hover:bg-white/20 border border-white/20",
+                    ),
+                  "aria-haspopup": "listbox",
+                  "aria-expanded": h,
+                  children: [
+                    (0, a.jsx)("span", {
+                      className: "text-base leading-none",
+                      children: u.flag,
+                    }),
+                    (0, a.jsx)("span", {
+                      className: "uppercase tracking-wide",
+                      children: u.code,
+                    }),
+                    (0, a.jsx)(d.Z, {
+                      className:
+                        "w-3.5 h-3.5 transition-transform duration-200 ".concat(
+                          h ? "rotate-180" : "",
+                        ),
+                    }),
+                  ],
+                }),
+                h &&
+                  (0, a.jsx)("div", {
+                    className:
+                      "absolute right-0 top-full mt-2 w-44 bg-white rounded-xl shadow-card-hover border border-gray-100 overflow-hidden z-50",
+                    children: b.map((e) =>
+                      (0, a.jsxs)(
+                        "button",
+                        {
+                          role: "option",
+                          "aria-selected": e.code === l,
+                          onClick: () => g(e.code),
+                          className:
+                            "w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors text-left ".concat(
+                              e.code === l
+                                ? "bg-brand-orange/10 text-brand-orange font-semibold"
+                                : "text-gray-700 hover:bg-gray-50 hover:text-brand-orange",
+                            ),
+                          children: [
+                            (0, a.jsx)("span", {
+                              className: "text-base",
+                              children: e.flag,
+                            }),
+                            (0, a.jsx)("span", { children: e.label }),
+                            e.code === l &&
+                              (0, a.jsx)("span", {
+                                className:
+                                  "ml-auto w-1.5 h-1.5 rounded-full bg-brand-orange",
+                              }),
+                          ],
+                        },
+                        e.code,
+                      ),
+                    ),
+                  }),
+              ],
+            });
+      }
+      function v() {
+        let [e, t] = (0, n.useState)(!1),
+          [r, f] = (0, n.useState)(!1),
+          [b, v] = (0, n.useState)(!1),
+          j = (0, o.jD)(),
+          w = (0, g.T)("nav"),
+          N = [
+            { href: "/", label: w("home") },
+            { href: "/cars", label: w("cars") },
+            {
+              label: w("services"),
+              children: [
+                { href: "/transport", label: w("transport") },
+                { href: "/location-longue-duree", label: w("longTerm") },
+              ],
+            },
+            { href: "/about", label: w("about") },
+            { href: "/blog", label: w("blog") },
+            { href: "/contact", label: w("contact") },
+          ];
+        ((0, n.useEffect)(() => {
+          let e = () => f(window.scrollY > 20);
+          return (
+            window.addEventListener("scroll", e),
+            () => window.removeEventListener("scroll", e)
+          );
+        }, []),
+          (0, n.useEffect)(() => {
+            t(!1);
+          }, [j]));
+        let y = (e) => j === e;
+        if (j.startsWith("/admin")) return null;
+        let k =
+          !(
+            [
+              "/",
+              "/cars",
+              "/transport",
+              "/location-longue-duree",
+              "/about",
+              "/contact",
+              "/confidentialite",
+              "/cgv",
+            ].includes(j) ||
+            [
+              "/cars/suv",
+              "/cars/berline",
+              "/cars/luxe",
+              "/cars/familiale",
+              "/cars/utilitaire",
+            ].includes(j)
+          ) || r;
+        return (0, a.jsxs)("header", {
+          className:
+            "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ".concat(
+              k ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent",
+            ),
+          children: [
+            (0, a.jsx)("nav", {
+              className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+              children: (0, a.jsxs)("div", {
+                className: "flex items-center justify-between h-20",
+                children: [
+                  (0, a.jsx)(s.default, {
+                    href: "/",
+                    className: "flex items-center flex-shrink-0",
+                    children: (0, a.jsx)(l.default, {
+                      src: "/logo.png",
+                      alt: "Lux Time Cars",
+                      width: 140,
+                      height: 56,
+                      className:
+                        "h-14 w-auto object-contain transition-all duration-300 ".concat(
+                          k ? "brightness-100" : "brightness-0 invert",
+                        ),
+                      priority: !0,
+                    }),
+                  }),
+                  (0, a.jsx)("div", {
+                    className: "hidden lg:flex items-center gap-1",
+                    children: N.map((e) =>
+                      e.children
+                        ? (0, a.jsxs)(
+                            "div",
+                            {
+                              className: "relative group",
+                              children: [
+                                (0, a.jsxs)("button", {
+                                  className:
+                                    "flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ".concat(
+                                      k
+                                        ? "text-dark hover:text-brand-orange hover:bg-orange-50"
+                                        : "text-white/90 hover:text-white hover:bg-white/10",
+                                    ),
+                                  onMouseEnter: () => v(!0),
+                                  onMouseLeave: () => v(!1),
+                                  children: [
+                                    e.label,
+                                    (0, a.jsx)(d.Z, {
+                                      className:
+                                        "w-4 h-4 transition-transform group-hover:rotate-180",
+                                    }),
+                                  ],
+                                }),
+                                (0, a.jsx)(c.M, {
+                                  children:
+                                    b &&
+                                    (0, a.jsx)(i.E.div, {
+                                      initial: { opacity: 0, y: 8 },
+                                      animate: { opacity: 1, y: 0 },
+                                      exit: { opacity: 0, y: 8 },
+                                      transition: { duration: 0.15 },
+                                      className:
+                                        "absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-card-hover border border-gray-100 overflow-hidden",
+                                      onMouseEnter: () => v(!0),
+                                      onMouseLeave: () => v(!1),
+                                      children: e.children.map((e) =>
+                                        (0, a.jsx)(
+                                          s.default,
+                                          {
+                                            href: e.href,
+                                            className:
+                                              "block px-4 py-3 text-sm font-medium transition-colors hover:bg-orange-50 hover:text-brand-orange ".concat(
+                                                y(e.href)
+                                                  ? "text-brand-orange bg-orange-50"
+                                                  : "text-dark",
+                                              ),
+                                            children: e.label,
+                                          },
+                                          e.href,
+                                        ),
+                                      ),
+                                    }),
+                                }),
+                              ],
+                            },
+                            e.label,
+                          )
+                        : (0, a.jsx)(
+                            s.default,
+                            {
+                              href: e.href,
+                              className:
+                                "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ".concat(
+                                  y(e.href)
+                                    ? "text-brand-orange bg-orange-50"
+                                    : k
+                                      ? "text-dark hover:text-brand-orange hover:bg-orange-50"
+                                      : "text-white/90 hover:text-white hover:bg-white/10",
+                                ),
+                              children: e.label,
+                            },
+                            e.href,
+                          ),
+                    ),
+                  }),
+                  (0, a.jsxs)("div", {
+                    className: "hidden lg:flex items-center gap-3",
+                    children: [
+                      (0, a.jsx)(p, { solidNav: k }),
+                      (0, a.jsxs)("a", {
+                        href: "tel:".concat(u.UE),
+                        className:
+                          "flex items-center gap-2 text-sm font-medium transition-colors ".concat(
+                            k
+                              ? "text-brand-blue hover:text-brand-orange"
+                              : "text-white hover:text-brand-orange",
+                          ),
+                        children: [
+                          (0, a.jsx)(h.Z, { className: "w-4 h-4" }),
+                          (0, a.jsx)("span", { children: u.UE }),
+                        ],
+                      }),
+                      "/transport" === j || "/location-longue-duree" === j
+                        ? (0, a.jsx)("a", {
+                            href: "#contact-form",
+                            className:
+                              "btn-primary text-sm py-2.5 whitespace-nowrap",
+                            children: w("quoteBtn"),
+                          })
+                        : "/cars" === j
+                          ? (0, a.jsx)("a", {
+                              href: "#cars-grid",
+                              className: "btn-primary text-sm py-2.5",
+                              children: w("book"),
+                            })
+                          : (0, a.jsx)(s.default, {
+                              href: "/cars",
+                              className: "btn-primary text-sm py-2.5",
+                              children: w("book"),
+                            }),
+                    ],
+                  }),
+                  (0, a.jsx)("button", {
+                    onClick: () => t(!e),
+                    className:
+                      "lg:hidden p-2 rounded-lg transition-colors ".concat(
+                        k
+                          ? "text-dark hover:bg-gray-100"
+                          : "text-white hover:bg-white/10",
+                      ),
+                    "aria-label": "Toggle menu",
+                    children: e
+                      ? (0, a.jsx)(x.Z, { className: "w-6 h-6" })
+                      : (0, a.jsx)(m.Z, { className: "w-6 h-6" }),
+                  }),
+                ],
+              }),
+            }),
+            (0, a.jsx)(c.M, {
+              children:
+                e &&
+                (0, a.jsx)(i.E.div, {
+                  initial: { opacity: 0, height: 0 },
+                  animate: { opacity: 1, height: "auto" },
+                  exit: { opacity: 0, height: 0 },
+                  transition: { duration: 0.25 },
+                  className:
+                    "lg:hidden bg-white border-t border-gray-100 shadow-lg overflow-hidden",
+                  children: (0, a.jsxs)("div", {
+                    className: "px-4 py-4 space-y-1",
+                    children: [
+                      N.map((e) =>
+                        e.children
+                          ? (0, a.jsxs)(
+                              "div",
+                              {
+                                children: [
+                                  (0, a.jsx)("p", {
+                                    className:
+                                      "px-3 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider",
+                                    children: e.label,
+                                  }),
+                                  e.children.map((e) =>
+                                    (0, a.jsx)(
+                                      s.default,
+                                      {
+                                        href: e.href,
+                                        className:
+                                          "block px-6 py-2.5 rounded-lg text-sm font-medium transition-colors ".concat(
+                                            y(e.href)
+                                              ? "text-brand-orange bg-orange-50"
+                                              : "text-dark hover:bg-gray-50 hover:text-brand-orange",
+                                          ),
+                                        children: e.label,
+                                      },
+                                      e.href,
+                                    ),
+                                  ),
+                                ],
+                              },
+                              e.label,
+                            )
+                          : (0, a.jsx)(
+                              s.default,
+                              {
+                                href: e.href,
+                                className:
+                                  "block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ".concat(
+                                    y(e.href)
+                                      ? "text-brand-orange bg-orange-50"
+                                      : "text-dark hover:bg-gray-50 hover:text-brand-orange",
+                                  ),
+                                children: e.label,
+                              },
+                              e.href,
+                            ),
+                      ),
+                      (0, a.jsxs)("div", {
+                        className:
+                          "pt-4 border-t border-gray-100 flex flex-col gap-3",
+                        children: [
+                          (0, a.jsxs)("div", {
+                            className: "flex flex-col gap-2 px-3",
+                            children: [
+                              (0, a.jsxs)("a", {
+                                href: "tel:".concat(u.UE),
+                                className:
+                                  "flex items-center gap-2 py-2 text-sm font-medium text-brand-blue",
+                                children: [
+                                  (0, a.jsx)(h.Z, { className: "w-4 h-4" }),
+                                  u.UE,
+                                ],
+                              }),
+                              (0, a.jsx)(p, { solidNav: !0, inline: !0 }),
+                            ],
+                          }),
+                          "/cars" === j
+                            ? (0, a.jsx)("a", {
+                                href: "#cars-grid",
+                                className: "btn-primary text-center text-sm",
+                                children: w("bookCar"),
+                              })
+                            : (0, a.jsx)(s.default, {
+                                href: "/cars",
+                                className: "btn-primary text-center text-sm",
+                                children: w("bookCar"),
+                              }),
+                        ],
+                      }),
+                    ],
+                  }),
+                }),
+            }),
+          ],
+        });
+      }
+    },
+    44971: function (e, t, r) {
+      "use strict";
+      r.d(t, {
+        Z: function () {
+          return n;
+        },
+      });
+      var a = r(57437);
+      function n(e) {
+        let { className: t = "w-5 h-5" } = e;
+        return (0, a.jsx)("svg", {
+          className: t,
+          viewBox: "0 0 24 24",
+          fill: "currentColor",
+          xmlns: "http://www.w3.org/2000/svg",
+          children: (0, a.jsx)("path", {
+            d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z",
+          }),
+        });
+      }
+    },
+    93448: function (e, t, r) {
+      "use strict";
+      r.d(t, {
+        NY: function () {
+          return i;
+        },
+        T4: function () {
+          return l;
+        },
+        UE: function () {
+          return d;
+        },
+        cn: function () {
+          return s;
+        },
+        ku: function () {
+          return m;
+        },
+        o4: function () {
+          return x;
+        },
+        ow: function () {
+          return c;
+        },
+        p6: function () {
+          return o;
+        },
+        xK: function () {
+          return h;
+        },
+      });
+      var a = r(61994),
+        n = r(53335);
+      function s() {
+        for (var e = arguments.length, t = Array(e), r = 0; r < e; r++)
+          t[r] = arguments[r];
+        return (0, n.m6)((0, a.W)(t));
+      }
+      function l(e) {
+        return new Intl.NumberFormat("fr-MA", {
+          style: "currency",
+          currency: "MAD",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(e);
+      }
+      function o(e) {
+        return new Intl.DateTimeFormat("fr-FR", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }).format(new Date(e));
+      }
+      function c(e, t) {
+        let r = new Date(e);
+        return Math.ceil((new Date(t).getTime() - r.getTime()) / 864e5);
+      }
+      let i = "+212660707200",
+        d = "+212660707200",
+        h = "luxtimecontact@gmail.com",
+        x = "Inara 02, 44 Rue 01, Casablanca 20470, Maroc",
+        m = "Lun-Sam: 8h-20h | Dim: 9h-18h";
+    },
+    68144: function (e, t, r) {
+      "use strict";
+      r.d(t, {
+        rU: function () {
+          return s;
+        },
+        jD: function () {
+          return o;
+        },
+        tv: function () {
+          return c;
+        },
+      });
+      var a = r(49198);
+      let n = (0, r(35426).Z)({
+          locales: ["fr", "en", "ar", "es"],
+          defaultLocale: "fr",
+          localePrefix: "as-needed",
+          localeDetection: !1,
+        }),
+        {
+          Link: s,
+          redirect: l,
+          usePathname: o,
+          useRouter: c,
+          getPathname: i,
+        } = (0, a.Z)(n);
+    },
+  },
+  function (e) {
+    (e.O(0, [2972, 3145, 6137, 208, 3231, 8639, 2971, 2117, 1744], function () {
+      return e((e.s = 8499));
+    }),
+      (_N_E = e.O()));
+  },
+]);
